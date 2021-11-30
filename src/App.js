@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://reby-front-chanllenge.herokuapp.com/api/getProducts")
+      .then((response) => response.json())
+      .then(async ({ products }) => {
+        setProducts(
+          products.map((product) => {
+            product.imageUrl = `https://reby-front-chanllenge.herokuapp.com/api/getProductImage/${product.id}/`;
+            return product;
+          })
+        );
+      });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Market Place</h1>
       </header>
+      <div className="product-list-container">
+        {products.map((product) => (
+          <div className="product-card" key={product.id}>
+            <img src={product.imageUrl} alt="" height="200px" />
+            <div class="product-card-tile">{product.name}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
