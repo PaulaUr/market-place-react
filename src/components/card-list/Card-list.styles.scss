@@ -1,0 +1,12 @@
+.card-list-container {
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .card-list-card {
+    flex: 0 1 calc(25% - 1em);
+    min-width: 380px;
+    margin: 24px;
+  }
