@@ -13,7 +13,7 @@ class Main extends Component {
   render() {
     const { products, isLoading, errMess} = this.props.products;
     return (
-      <React.Fragment>{products && <Products products={products} isLoading={isLoading} errMess={errMess} />}</React.Fragment>
+      <React.Fragment><Products products={products} isLoading={isLoading} errMess={errMess} /></React.Fragment>
     );
   }
 }

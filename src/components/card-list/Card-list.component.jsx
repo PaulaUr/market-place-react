@@ -1,22 +1,22 @@
 import React from 'react';
-import './Card-list.styles.scss';
+import {CardListContainerStyle, CardListItemStyle} from './Card-list-styles';
 import Card from '../card/Card.component';
 
 export const CardList = ({products}) => {
-    console.log(products);
     const dataList = products.map((item) => {
+    const { applyOnSale } = item;
       if (item) {
         return (
-          <div className="card-list-card" key={item.id.toString()}>
+          <CardListItemStyle key={item.id.toString()} applyOnSale={applyOnSale}>
               <Card itemData={item}/>
-          </div>
+          </CardListItemStyle>
         )
       }
     });
 
     return (
-    <div className="card-list-container">
+    <CardListContainerStyle>
         {dataList}
-    </div>
+    </CardListContainerStyle>
     );
   };

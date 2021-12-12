@@ -9,14 +9,14 @@ const store = ConfigureStore();
 const App = () => {
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Market Place</h1>
-      </header>
+    <React.Fragment>
+      <div className="App-header">
+        <div className="App-header-title">Market Place</div>
+      </div>
       <Provider store={store}>
         <Main/>
       </Provider>
-    </div>
+    </React.Fragment>
   );
 };
 

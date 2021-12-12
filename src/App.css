@@ -1,35 +1,21 @@
-.App {
-  text-align: center;
-}
-
 .App-header {
   background-color: #282c34;
-  position: sticky;
-  top: 0;
-  height: 64px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+}
+.App-header-title {
+  display: inline-block;
+  margin: 16px;
   color: white;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 .App-link {
   color: #61dafb;
 }
-
-/* .product-list-container {
-  margin: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.product-list-card {
-  flex: 0 1 calc(25% - 1em);
-  min-width: 380px;
-  margin: 24px;
-} */
 
 .product-card-tile {
   height: 48px;
